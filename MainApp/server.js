@@ -1,23 +1,18 @@
 const express = require('express');
-const mongoose = require('mongoose');
-require('dotenv').config();
 const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const multer = require('multer');
 const axios = require("axios")
 const app = express();
-const FormData = require("form-data")
+const FormData = require("form-data");
+const User = require('./db/auth');
+const { uuid } = require('uuidv4');
 
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'client/src')));
 app.use(express.json());
-
-const mongoDB = process.env.MONGO_URL;
-mongoose.connect(mongoDB)
-    .then( () => console.log('Connected to MongoDB'))
-    .catch(err => console.log('Connection error:', err));
 
 
 var storage = multer.memoryStorage();
@@ -47,6 +42,39 @@ app.post('/pleaseUseAsIntended', upload.single('file'), async (req, res) => {
       res.status(500).json({ message: 'An error occurred while processing the file' });
     }
 });
+
+app.post("/handleAuth", async (req, res) => {
+    console.log("handling auth request")
+    console.log(req.cookies)
+    const data = req.body
+
+    if (req.body.type == "register") {
+        console.log("type is register")
+        const exists = await User.findOne({email: data.email})
+        console.log("Already exists")
+        if (exists) return res.status(400).send("User already exists!")
+
+        data.userID = uuid()
+        const userDoc = new User({...data})
+        await userDoc.save()
+        if (userDoc) {
+            res.cookie("id", userDoc.userID)
+            return res.status(200).send(true)
+        } else {
+            return res.status(400).send(false)
+        }
+    } else {
+        const exists = await User.findOne({email: data.email, password: data.password})
+        if (exists) {
+            res.cookie("id", userDoc.userID)
+            return res.status(200).send(true)
+        } else {
+            return res.status(400).send(false)
+        }
+    }
+
+    res.status(200).send()
+})
 
     // Serve React app
 app.get('*', (req, res) => {

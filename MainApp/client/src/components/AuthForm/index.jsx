@@ -16,6 +16,7 @@ import React from "react";
 import { GoogleButton } from "../GoogleButton";
 import { TwitterButton } from "../TwitterButton";
 import "./index.css"
+import { Navigate } from "react-router";
 
 export function AuthForm(props) {
   const [type, toggle] = useToggle(["login", "register"]);
@@ -35,18 +36,33 @@ export function AuthForm(props) {
     },
   });
 
+  const handleAuth = async () => {
+    if (form.validate().hasErrors == true) return
+
+    console.log(JSON.stringify({type, ...form.values}))
+    const res = await fetch("http://localhost:5000/handleAuth", {
+      method: 'POST',
+      body: JSON.stringify({type, ...form.values}),
+      headers: {
+        "content-type": "application/json"
+      }
+    });
+
+    if (res.status != 200) {
+      throw new Error('An error occured while authenticating');
+    }
+
+    console.log(await res.json())
+    window.location.href = "/resume"
+  }
+
   return (
     <Paper style={{"textAlign": "left !important"}} radius="md" p="xl" withBorder {...props}>
       <Text size="lg" fw={500}>
-        Please {type} with
+        Please {type} to continue
       </Text>
 
-      <Group grow mb="md" mt="md">
-        <GoogleButton radius="xl">Google</GoogleButton>
-        <TwitterButton radius="xl">Twitter</TwitterButton>
-      </Group>
-
-      <Divider label="Or continue with email" labelPosition="center" my="lg" />
+      <Divider label="" labelPosition="center" my="lg" />
 
       <form onSubmit={form.onSubmit(() => {})}>
         <Stack align="stretch"> {/* Ensures child elements take full width */}
@@ -115,7 +131,7 @@ export function AuthForm(props) {
               ? "Already have an account? Login"
               : "Don't have an account? Register"}
           </Anchor>
-          <Button type="submit" color="blue" radius="xl">
+          <Button onClick={e => handleAuth()} type="submit" color="blue" radius="xl">
             {upperFirst(type)}
           </Button>
         </Group>
