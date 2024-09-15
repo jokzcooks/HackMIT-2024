@@ -1,11 +1,11 @@
 import { SignedOut } from "@clerk/clerk-react";
 import React from "react";
-import { AuthenticationForm } from "../components/AuthenticationForm";
+import { AuthForm } from "../../components/AuthForm";
 
 const LoginPage = () => {
   return (
     <SignedOut>
-      <AuthenticationForm />
+      <AuthForm />
     </SignedOut>
   );
 };

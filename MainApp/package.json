@@ -4,9 +4,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client": "npm run vite:dev --prefix client"
   },
   "keywords": [],
   "author": "",

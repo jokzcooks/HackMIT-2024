@@ -13,11 +13,10 @@ import {
 import { useForm } from "@mantine/form";
 import { upperFirst, useToggle } from "@mantine/hooks";
 import React from "react";
-import "../index.css";
-import { GoogleButton } from "./Buttons/GoogleButton";
-import { TwitterButton } from "./Buttons/TwitterButton";
+import { GoogleButton } from "../GoogleButton";
+import { TwitterButton } from "../TwitterButton";
 
-export function AuthenticationForm(props) {
+export function AuthForm(props) {
   const [type, toggle] = useToggle(["login", "register"]);
   const form = useForm({
     initialValues: {
