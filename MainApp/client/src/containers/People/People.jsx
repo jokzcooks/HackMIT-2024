@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import './people.css';
 import { ProfileIcon1, ProfileIcon2, ProfileIcon3, ProfileIcon4, ProfileIcon5, ProfileIcon6 } from '../../components/Images';
+import { useNavigate } from 'react-router';
 
 const SuggestedProfiles = () => {
   const [backgroundColor, setBackgroundColor] = useState('#FFF5E1');
+  const navigate = useNavigate()
 
   const handleBackgroundColorChange = (event) => {
     setBackgroundColor(event.target.value);
@@ -44,16 +46,10 @@ const SuggestedProfiles = () => {
 
   return (
     <div className="container" style={{ backgroundColor: backgroundColor }}>
-      <div className="nav-bar">
-        <button className="nav-button">Home</button>
-        <button className="nav-button">About</button>
-        <button className="nav-button">Profile</button>
-        <button className="nav-button">Contact</button>
-      </div>
       <div className="title">Suggested for you</div>
       <div className="profile-grid">
         {profiles.map((profile, index) => (
-          <div key={index} className="profile-card">
+          <div onClick={e => {navigate("/chat")}} key={index} className="profile-card">
             <img src={profile.image} alt={profile.name} className="profile-image" />
             <div className="profile-info">
               <div className="profile-name">{profile.name}</div>

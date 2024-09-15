@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import "./index.css"
+import { useNavigate } from "react-router"
 const Profile = ({}) => {
+    const navigate = useNavigate()
     // const [profileData, setProfileData] = useState(null)
     // const [loading, setLoading] = useState(true);
 
@@ -40,7 +42,7 @@ const Profile = ({}) => {
                     ))
                 }
 
-                <button>Find your team!</button>
+                <button onClick={() => {navigate("/people")}}>View your recommended teamates!</button>
         </div>
     )
 
