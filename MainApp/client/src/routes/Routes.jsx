@@ -18,9 +18,15 @@ const AppRoutes = () => {
       <Header />
       <Routes>
 
-        <Route path="/"  element={ <SignedOut><LandingPage /></SignedOut> }/>
+        {/* <Route path="/"  element={ <SignedOut><LandingPage /></SignedOut> }/>
         <Route path="/landing"  element={ <SignedIn><TestLand/></SignedIn> }/>
         <Route path="/login" element={ <SignedOut><LoginPage /></SignedOut> }/>
+        <Route path="/resume" element={ <SignedOut><LoginPage /></SignedOut> }/>
+         */}
+        <Route path="/"  element={ <LandingPage /> }/>
+        <Route path="/landing"  element={ <TestLand/> }/>
+        <Route path="/login" element={ <LoginPage /> }/>
+        <Route path="/resume" element={ <LoginPage />}/>
         
         {/* Catch-all route to redirect unauthorized access */}
         {/* <Route path="*" element={<SignedOut><LoginPage /></SignedOut>} /> */}

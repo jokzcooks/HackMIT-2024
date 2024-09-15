@@ -17,13 +17,7 @@ const Context = ({}) => {
 
   return (
       <div className="container max-w-2xl flex flex-col gap-8">
-      {
-        location.pathname === "/login" && 
-          (<h1 className="text-4xl font-extrabold my-8 text-center">
-            Takathon Login
-          </h1>)
-      }
-      <AuthStatus />
+      {/* <AuthStatus /> */}
       <div className="flex justify-center items-start min-h-screen">
         <AppRoutes />
       </div>
