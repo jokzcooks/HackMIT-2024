@@ -1,54 +1,40 @@
-* {
-  box-sizing: border-box;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-*:any-link {
-  text-decoration: none;
-}
-
-::-webkit-scrollbar {
-  display: none;
-}
-
-.App {
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
   text-align: center;
 }
 
-:root {
-  --light: #FDFAF8;
-  --light-opac: #fdfaf8c1;
-  --accent_A: #EFDDD3;
-  --accent_B: #C7B0AF;
-  --dark: #393A3B;
-  --red: rgba(255, 100, 100, 1);
-  --red-opac: rgba(255, 100, 100, 0.25);
-  --green: #ABFF96;
-  --green-opac: rgba(171, 255, 150, 0.25);
-  --red-darker: rgba(78, 42, 53, 1);
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-html, body, #root {
-  background-color: var(--light);
-  color: var(--dark);
-  overflow: clip;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  position: relative;
-  /* width: 100vw;
-  height: 100vh; */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-img, p {
-  user-select: none;
-  -webkit-user-drag: none;
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
 }
 
-* {
-  box-sizing:border-box;
+.card {
+  padding: 2em;
 }
 
 *:focus {

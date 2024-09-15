@@ -1,8 +1,81 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Inter";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 16px;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: linear-gradient(45deg, rgb(235,122,200), rgb(114,78,144), rgb(213,142,223));
+    --foreground: #ffffff; /* White */
+
+    --card: var(--background);
+    --card-foreground: #ffffff; /* White */
+
+    --popover: var(--background);
+    --popover-foreground: #ffffff; /* White */
+
+    --primary: rgb(235,122,200); /* One of the gradient colors */
+    --primary-foreground: #ffffff; /* White */
+
+    --secondary: rgb(114,78,144); /* Another gradient color */
+    --secondary-foreground: #ffffff; /* White */
+
+    --muted: rgb(213,142,223); /* Third gradient color */
+    --muted-foreground: #ffffff; /* White */
+
+    --accent: rgb(114,78,144); /* Purple */
+    --accent-foreground: #ffffff; /* White */
+
+    --destructive: #000000; /* Black */
+    --destructive-foreground: #ffffff; /* White */
+
+    --border: rgb(114,78,144); /* Purple */
+    --input: rgb(114,78,144); /* Purple */
+    --ring: rgb(114,78,144); /* Purple */
+
+    --radius: 0.5rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: linear-gradient(45deg, rgb(114,78,144), rgb(213,142,223), rgb(235,122,200));
+      --foreground: #ffffff; /* White for dark mode text */
+
+      --card: var(--background);
+      --card-foreground: #ffffff; /* White foreground for dark mode cards */
+
+      --popover: var(--background);
+      --popover-foreground: #ffffff; /* White foreground for dark mode popovers */
+
+      --primary: rgb(114,78,144); /* Purple */
+      --primary-foreground: #ffffff; /* White */
+
+      --secondary: rgb(213,142,223); /* Lavender */
+      --secondary-foreground: #ffffff; /* White */
+
+      --muted: rgb(235,122,200); /* Pink */
+      --muted-foreground: #ffffff; /* White */
+
+      --accent: rgb(213,142,223); /* Lavender */
+      --accent-foreground: #ffffff; /* White */
+
+      --destructive: #ffffff; /* White for destructive elements in dark mode */
+      --destructive-foreground: #000000; /* Black for destructive text in dark mode */
+
+      --border: #ffffff; /* White for borders in dark mode */
+      --input: #ffffff; /* White for inputs in dark mode */
+      --ring: #ffffff; /* White for rings in dark mode */
+    }
+  }
+}
+
+@layer base {
+  * {
+    /* Use Tailwind border and text utilities */
+    border-color: var(--border);
+    color: var(--foreground);
+  }
+
+  body {
+    @apply bg-gradient-radiant text-white; /* Use text-white directly */
+  }
 }
