@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
-import HomePage from '../Home';
+import LandingPage from '../LandingPage';
 import Header from '../../components/Header';
 
 const Base = () => {
@@ -9,7 +9,7 @@ const Base = () => {
 
   useEffect(() => {
     if (location.pathname === '/') {
-      navigate("/home");
+
     }
   }, [navigate, location.pathname]);
 
@@ -17,7 +17,7 @@ const Base = () => {
     <div className='mainContainer'>
         <Header />
         <Routes>
-            <Route path='/home' element={<HomePage />} />
+            <Route path='/' element={<LandingPage />} />
         </Routes>
     </div>
   );
