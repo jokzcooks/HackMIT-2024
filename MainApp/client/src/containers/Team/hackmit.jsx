@@ -1,7 +1,6 @@
 import React from 'react';
-import './App.css';
 
-function App() {
+function TeamPage() {
   return (
     <div className="App">
       {/* Navigation Bar */}
@@ -29,4 +28,4 @@ function App() {
   );
 }
 
-export default App;
+export default TeamPage;

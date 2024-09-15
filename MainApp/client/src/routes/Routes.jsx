@@ -9,6 +9,7 @@ import ResumePage from "../containers/Resume";
 import ChatBox from "../containers/Chat/chat";
 import SuggestedProfiles from "../containers/People/people";
 import Profile from "../containers/Profile";
+import TeamPage from "../containers/Team/hackmit";
 
 const AppRoutes = () => {
   const location = useLocation()
@@ -33,7 +34,7 @@ const AppRoutes = () => {
         <Route path="/landing"  element={ <TestLand/> }/>
         <Route path="/login" element={ <LoginPage /> }/>
         <Route path="/resume" element={ <ResumePage />}/>
-        <Route path="/team" element={ <ResumePage />}/>
+        <Route path="/team" element={ <TeamPage />}/>
         <Route path="/people" element={ <SuggestedProfiles />}/>
         <Route path="/chat" element={ <ChatBox />}/>
         <Route path="/profile" element={ <Profile/>}/>
