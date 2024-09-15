@@ -5,6 +5,7 @@
 
 .landingPageContainer > div:nth-of-type(2) {
   background-color: #162533;
+  justify-content: start;
 }
 
 .landingPageContainer > div {
@@ -18,7 +19,7 @@
   align-items: center;
 }
 
-.landingPageContainer > div > .content {
+.landingPageContainer > .first > .content {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -26,24 +27,38 @@
   gap: 10px;
 }
 
-.landingPageContainer > div > .content > p {
+.landingPageContainer > .first > .content > p {
   color: #162533;
   margin: 0;
 }
 
-.landingPageContainer > div > .content > .title {
+.landingPageContainer > .first > .content > .title {
   font-size: clamp(40px, 5em, 80px);
 }
 
-.landingPageContainer > div > .content > .subTitle {
+.landingPageContainer > .first > .content > .subTitle {
   font-size: 32px;
 }
 
-.landingPageContainer > div > .content > .description {
+.landingPageContainer > .first > .content > .subTitle > span {
+    background: -webkit-linear-gradient(#3affe4, #b400fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bolder;
+    font-size: 36px;
+}
+
+.landingPageContainer > .first > .content > .description {
   font-size: 20px;
 }
 
-.landingPageContainer > div > .content > .callToAction {
+.landingPageContainer > .first > .content > .buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 20px;
+}
+
+.landingPageContainer > .first > .content > .buttons > .callToAction {
   border-radius: 10px;
   border: 0;
   background-color: #162533;
@@ -53,4 +68,89 @@
   height: 48px;
   width: 300px;
   margin-top: 40px;
+}
+
+.landingPageContainer > .first > .content > .buttons > .callToAction:nth-of-type(1) {
+    background-color: rgb(239 239 239);
+    color: #162533;
+    font-weight: unset;
+}
+
+.landingPageContainer > .second {
+    height: 50vh;
+    max-height: 50vh;
+    min-height: 500px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landingPageContainer > .second > .ctaMini {
+  color: rgb(239 239 239);
+  cursor: pointer;
+}
+
+.landingPageContainer > .second > .features {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: start;
+    padding: 30px;
+}
+.landingPageContainer > .second > .features > p {
+    color: rgb(220, 208, 229);
+    font-size: 32px;
+}
+.landingPageContainer > .second > .features > div {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.landingPageContainer > .second > .features > div > div {
+    background-color: rgb(220, 208, 229);
+    height: 100%;
+    max-width: 325px;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+}
+
+.landingPageContainer > .second > .features > div > div > p {
+}
+.landingPageContainer > .second > .features > div > div > p > span {
+    font-style: italic;
+    font-size: 48px;
+    top: -60px;
+    margin: 0;
+    opacity: 0.4;
+    right: -10px;
+    position: absolute;
+    font-family: Playfair Display;
+    padding: 0;
+}
+.landingPageContainer > .second > .features > div > div > p:nth-of-type(1) {
+    font-size: 26px;
+    position: relative;
+    margin-bottom: 0;
+}
+.landingPageContainer > .second > .features > div > div > p:nth-of-type(2) {
+}
+
+.landingPageContainer > .third {
+  flex-flow: row;
+  gap: 60px;
+}
+
+.landingPageContainer > .third > p {
+  font-size: 40px;
+}
+
+.landingPageContainer > .third > p > span {
+  background: -webkit-linear-gradient(#3affe4, #b400fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bolder;
 }

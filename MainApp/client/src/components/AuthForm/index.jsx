@@ -15,6 +15,7 @@ import { upperFirst, useToggle } from "@mantine/hooks";
 import React from "react";
 import { GoogleButton } from "../GoogleButton";
 import { TwitterButton } from "../TwitterButton";
+import "./index.css"
 
 export function AuthForm(props) {
   const [type, toggle] = useToggle(["login", "register"]);
@@ -35,7 +36,7 @@ export function AuthForm(props) {
   });
 
   return (
-    <Paper radius="md" p="xl" withBorder {...props}>
+    <Paper style={{"textAlign": "left !important"}} radius="md" p="xl" withBorder {...props}>
       <Text size="lg" fw={500}>
         Please {type} with
       </Text>

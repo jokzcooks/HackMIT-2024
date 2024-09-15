@@ -13,8 +13,6 @@ if (!PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key");
 }
 
-console.log('Clerk Publishable Key:', PUBLISHABLE_KEY); // Remove this after verifying
-
 const root = ReactDOM.createRoot(document.getElementById("root"))
 
 root.render(

@@ -1,0 +1,13 @@
+.mantine-Paper-root {
+    text-align: left !important;
+    color: rgb(220, 208, 229);
+}
+
+.mantine-Paper-root button {
+    border-radius: 5px;
+}
+
+.mantine-Paper-root input {
+    border-radius: 5px;
+    background-color: rgb(56, 56, 56) !important;
+}
