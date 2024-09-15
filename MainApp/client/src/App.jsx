@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, useLocation } from "react-router-dom";
 import "./App.css";
-import AuthStatus from "./components/AuthStatus"; // Importing AuthStatus if needed
 import AppRoutes from "./routes/Routes";
+import AuthStatus from "./utils/AuthStatus"; // Importing AuthStatus if needed
 
 function App() {
   return (

@@ -1,13 +1,13 @@
 
-.landingPageContainer {
+.DefaultContainer {
   overflow-y: auto;
 }
 
-.landingPageContainer > div:nth-of-type(2) {
+.DefaultContainer > div:nth-of-type(2) {
   background-color: #162533;
 }
 
-.landingPageContainer > div {
+.DefaultContainer > div {
   height: 100vh;
   width: 100vw;
   min-height: 100vh;
@@ -18,7 +18,7 @@
   align-items: center;
 }
 
-.landingPageContainer > div > .content {
+.DefaultContainer > div > .content {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -26,24 +26,24 @@
   gap: 10px;
 }
 
-.landingPageContainer > div > .content > p {
+.DefaultContainer > div > .content > p {
   color: #162533;
   margin: 0;
 }
 
-.landingPageContainer > div > .content > .title {
+.DefaultContainer > div > .content > .title {
   font-size: clamp(40px, 5em, 80px);
 }
 
-.landingPageContainer > div > .content > .subTitle {
+.DefaultContainer > div > .content > .subTitle {
   font-size: 32px;
 }
 
-.landingPageContainer > div > .content > .description {
+.DefaultContainer > div > .content > .description {
   font-size: 20px;
 }
 
-.landingPageContainer > div > .content > .callToAction {
+.DefaultContainer > div > .content > .callToAction {
   border-radius: 10px;
   border: 0;
   background-color: #162533;

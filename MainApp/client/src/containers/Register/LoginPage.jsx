@@ -1,6 +1,6 @@
 import { SignedOut } from "@clerk/clerk-react";
 import React from "react";
-import { AuthenticationForm } from "../components/AuthenticationForm";
+import { AuthenticationForm } from "../../utils/AuthenticationForm";
 
 const LoginPage = () => {
   return (

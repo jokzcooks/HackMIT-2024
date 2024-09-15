@@ -4,6 +4,7 @@ import '@mantine/core/styles.css';
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
+import "./containers/Default/Default.module.css";
 import "./index.css";
 
 // Import your publishable key

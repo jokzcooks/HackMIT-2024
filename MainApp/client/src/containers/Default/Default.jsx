@@ -1,25 +1,19 @@
-import "./index.css"
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import "./Default.module.css";
 
-const LandingPage = ({}) => {
-    const navigate = useNavigate()
-
+const DefaultPage = () => {
     return (
-        <div className="landingPageContainer">
+        <div className="DefaultPageContainer">
             <div className="first">
                 <div className="content">
                     <p className="title">AI-Powered Team Building</p>
                     <p className="subTitle">Let AI do the hard work of finding your ideal team.</p>
                     <p className="description">Our platform uses ... to match you with teammates who align with your goals and preferences</p>
-                    <button className="callToAction" onClick={() => {navigate("/register")}}>Get Started</button>
+                    <Link to="/login" className="callToAction">Get Started</Link>
                 </div>
             </div>
-            <div>
-                
-            </div>
         </div>
-    )
-
+    );
 }
 
-export default LandingPage
+export default DefaultPage;

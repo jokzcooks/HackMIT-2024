@@ -13,9 +13,9 @@ import {
 import { useForm } from "@mantine/form";
 import { upperFirst, useToggle } from "@mantine/hooks";
 import React from "react";
+import { GoogleButton } from "../components/Buttons/GoogleButton";
+import { TwitterButton } from "../components/Buttons/TwitterButton";
 import "../index.css";
-import { GoogleButton } from "./Buttons/GoogleButton";
-import { TwitterButton } from "./Buttons/TwitterButton";
 
 export function AuthenticationForm(props) {
   const [type, toggle] = useToggle(["login", "register"]);
