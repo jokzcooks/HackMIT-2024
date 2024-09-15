@@ -40,3 +40,8 @@ export {
     default as ProfileIcon6
 }
 from './icons/magicstudio-art_5.png'
+
+export {
+    default as Kanika
+}
+from './icons/kanika.jpeg'

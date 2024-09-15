@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './people.css';
-import { ProfileIcon1, ProfileIcon2, ProfileIcon3, ProfileIcon4, ProfileIcon5, ProfileIcon6 } from '../../components/Images';
+import { Kanika, ProfileIcon1, ProfileIcon2, ProfileIcon3, ProfileIcon4, ProfileIcon5, ProfileIcon6 } from '../../components/Images';
 import { useNavigate } from 'react-router';
 
 const SuggestedProfiles = () => {
@@ -15,7 +15,7 @@ const SuggestedProfiles = () => {
     {
       name: 'Kanika Gupta',
       title: 'Full Stack Developer',
-      image: ProfileIcon1,
+      image: Kanika,
     },
     {
       name: 'Avery Williams',
