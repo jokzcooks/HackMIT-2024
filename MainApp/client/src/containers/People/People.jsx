@@ -13,7 +13,7 @@ const SuggestedProfiles = () => {
 
   const profiles = [
     {
-      name: 'Avery Williams',
+      name: 'Kanika Gupta',
       title: 'Full Stack Developer',
       image: ProfileIcon1,
     },
@@ -45,7 +45,7 @@ const SuggestedProfiles = () => {
   ];
 
   return (
-    <div className="container" style={{ backgroundColor: backgroundColor }}>
+    <div className="container" style={{ backgroundColor: backgroundColor, cursor: "pointer" }}>
       <div className="title">Suggested for you</div>
       <div className="profile-grid">
         {profiles.map((profile, index) => (

@@ -66,7 +66,7 @@ def fetch_ai_chatbot(summary1, summary2):
         
 if __name__ == "__main__":
     #get summaries from database
-    summary1=("Hello kanika, a very outgoing, backend focused perosn")
+    summary1=("Name: Cole Nangle\nClass Year: December 2024\nExperience Level: Pro\nSkillset:\nLanguages: JavaScript, Python, C, Go, Java, R\nFrameworks: Express, Electron, Wails, Bootstrap, Angular.js, VueJS, jQuery\nDatabase: MongoDB, Redis, Cassandra, MSSQL, PostgreSQL\nOther: React, Forge, WASM, Webpack, JWT, Figma, CAD\nShort Bio: Cole Nangle is a detail-oriented software/web developer with over 4 years of experience, specializing in developing secure applications and exploiting vulnerabilities. He has led a successful consulting firm, won top national awards in web exploitation and competitive hacking, and currently pursues a Computer Science degree at the University of Georgia.")
     summary2=("xyz, introvert, ideator, frontend person")
     ans=fetch_ai_chatbot(summary1,summary2)
     print(ans)

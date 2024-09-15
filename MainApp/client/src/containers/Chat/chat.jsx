@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "./chat.css"
 
 const ChatBox = () => {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([""]);
   const [newMessage, setNewMessage] = useState('');
 
   const handleInputChange = (event) => {
