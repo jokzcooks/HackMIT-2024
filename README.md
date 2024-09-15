@@ -1,8 +1,11 @@
-# Hackathon Team Formation App
+# Takathon - The Solution to Team Matching at Every Hackathon 
 
 ## Overview
 
-The Hackathon Team Formation App helps participants easily form teams by matching them based on their skills, interests, and preferences. It offers real-time updates, secure sign-in, and a simple interface, all built on scalable infrastructure.
+Takathon is a Full-stack Web App helps participants easily form teams by matching them based on their skills, interests, and preferences. We offers real-time updates, secure sign-in, and a simple interface, all built on scalable infrastructure.
+
+## Demo
+![Landing Page](http://url/to/img.png)
 
 ## Features
 
