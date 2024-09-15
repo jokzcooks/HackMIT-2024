@@ -1,0 +1,56 @@
+
+.landingPageContainer {
+  overflow-y: auto;
+}
+
+.landingPageContainer > div:nth-of-type(2) {
+  background-color: #162533;
+}
+
+.landingPageContainer > div {
+  height: 100vh;
+  width: 100vw;
+  min-height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.landingPageContainer > div > .content {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.landingPageContainer > div > .content > p {
+  color: #162533;
+  margin: 0;
+}
+
+.landingPageContainer > div > .content > .title {
+  font-size: clamp(40px, 5em, 80px);
+}
+
+.landingPageContainer > div > .content > .subTitle {
+  font-size: 32px;
+}
+
+.landingPageContainer > div > .content > .description {
+  font-size: 20px;
+}
+
+.landingPageContainer > div > .content > .callToAction {
+  border-radius: 10px;
+  border: 0;
+  background-color: #162533;
+  color: rgb(239 239 239);
+  font-weight: 600;
+  font-size: 24px;
+  height: 48px;
+  width: 300px;
+  margin-top: 40px;
+}

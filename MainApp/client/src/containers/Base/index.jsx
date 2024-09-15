@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import LandingPage from '../LandingPage';
 import Header from '../../components/Header';
+import ResumePage from '../Resume';
 
 const Base = () => {
   const navigate = useNavigate();
@@ -18,6 +19,7 @@ const Base = () => {
         <Header />
         <Routes>
             <Route path='/' element={<LandingPage />} />
+            <Route path='/resume' element={<ResumePage/>} />
         </Routes>
     </div>
   );

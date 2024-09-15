@@ -60,8 +60,23 @@ h1 {
   margin: 0;
 }
 
+button {
+  cursor: pointer;
+  outline: 0;
+  transition: 200ms ease;
+}
+
+button:hover:not(:active) {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
 .mainContainer,
-.landingPageContainer {
+.landingPageContainer,
+.resumePageContainer {
   width: 100vw;
   height: 100vh;
   margin: 0;
@@ -70,45 +85,4 @@ h1 {
   background-color: rgb(220, 208, 229);
   display: flex;
   flex-flow: column nowrap;
-}
-
-.landingPageContainer {
-  text-align: center;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.landingPageContainer > .first {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.landingPageContainer > .first > p {
-  margin: 0;
-}
-
-.landingPageContainer > .first > .title {
-  font-size: 4em;
-}
-
-.landingPageContainer > .first > .subTitle {
-  font-size: 32px;
-}
-
-.landingPageContainer > .first > .description {
-  font-size: 20px;
-}
-
-.landingPageContainer > .first > .callToAction {
-  width: 250px;
-  height: 40px;
-  border-radius: 10px;
-  border: 0;
-  font-weight: 400;
-  font-size: 20px;
 }
