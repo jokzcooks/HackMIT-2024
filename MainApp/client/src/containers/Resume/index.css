@@ -73,3 +73,48 @@
 .resumePageContainer > div > .uploadContainer > p:nth-of-type(2) {
     font-size: 14px;
 }
+
+.resumePageContainer > div > .fileEntry {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 5px 15px;
+    border: 3px solid#393a3bcc;
+    border-radius: 10px;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.resumePageContainer > div > .fileEntry > img {
+    height: 40px;
+}
+
+.resumePageContainer > div > .fileOptions {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 20px;
+}
+
+.resumePageContainer > div > .fileOptions > button {
+    border-radius: 10px;
+    border: 0;
+    font-weight: 600;
+    font-size: 18px;
+    height: 48px;
+    width: 250px;
+    margin-top: 40px;
+    flex: 1;
+    margin-top: 10px;
+}
+
+.resumePageContainer > div > .fileOptions > .cancel {
+    background-color: transparent;
+    border: 2px solid #162533;
+    color: #162533;
+}
+
+.resumePageContainer > div > .fileOptions > .continue {
+    background-color: #162533;
+    color: rgb(239 239 239);
+}

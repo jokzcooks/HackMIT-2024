@@ -1,50 +1,53 @@
 import { InfoIcon, ResumeIcon } from "../../components/Images"
+import { useState } from 'react';
 import "./index.css"
 
 export const ResumePage = ({}) => {
 
-    const onDragOver = (ev) => {
-        console.log("File(s) in drop zone");
-      
-        // Prevent default behavior (Prevent file from being opened)
-        ev.preventDefault();
-    }
+    const [file, setFile] = useState(null)
 
-    const onDrop = (ev) => {
-        console.log("File(s) dropped");
-      
-        // Prevent default behavior (Prevent file from being opened)
+    const handleDrop = (ev) => {
         ev.preventDefault();
-      
         if (ev.dataTransfer.items) {
-          // Use DataTransferItemList interface to access the file(s)
-          [...ev.dataTransfer.items].forEach((item, i) => {
-            // If dropped items aren't files, reject them
-            if (item.kind === "file") {
-              const file = item.getAsFile();
-              console.log(`… file[${i}].name = ${file.name}`);
-            }
-          });
+          const fls = [...ev.dataTransfer.items].map(item => {
+            console.log(item)
+            if (item.kind === "file" && String(item.type).toLowerCase().includes("pdf")) return item.getAsFile()
+          })
+          setFile(fls[0])
         } else {
-          // Use DataTransfer interface to access the file(s)
-          [...ev.dataTransfer.files].forEach((file, i) => {
-            console.log(`… file[${i}].name = ${file.name}`);
-          });
+            console.log([...ev.dataTransfer.files])
+          setFile([...ev.dataTransfer.files][0])
         }
       }
 
     return (
         <div className="resumePageContainer">
 
-            <div>
-                <p className="title">Upload Resume</p>
-                <p className="subTitle"><img src={InfoIcon} alt="" /> We'll use this to build your profile</p>
-                <div className="uploadContainer" onDrop={e => handleDrop(e)} onDragOver={e => handleDragOver(e)}>
-                    <img src={ResumeIcon} alt="" />
-                    <p>Drag resume here</p>
-                    <p>Or click to browse</p>
+
+            {
+            file 
+            ? 
+                <div>
+                    <div className="fileEntry">
+                        <img src={ResumeIcon} alt="" />
+                        <p>{file.name}</p>
+                    </div>
+                    <div className="fileOptions">
+                        <button className="cancel" onClick={e => setFile(null)}>Cancel</button>
+                        <button className="continue">Continue</button>
+                    </div>
                 </div>
-            </div>
+            :
+                <div>
+                    <p className="title">Upload Resume</p>
+                    <p className="subTitle"><img src={InfoIcon} alt="" /> We'll use this to build your profile</p>
+                    <div className="uploadContainer" onDrop={e => handleDrop(e)} onDragOver={e => e.preventDefault()}>
+                        <img src={ResumeIcon} alt="" />
+                        <p>Drag resume (pdf) here</p>
+                        <p>Or click to browse</p>
+                    </div>
+                </div>
+            }
 
         </div>
     )
