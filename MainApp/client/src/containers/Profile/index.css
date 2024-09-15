@@ -1,0 +1,12 @@
+.profileDataContainer {
+    font-size: 20px;
+    color: #162533;
+    margin: 0;
+    padding: 100px 300px;
+}
+
+.profileDataContainer > button {
+    background-color: #162533;
+    color: aliceblue;
+    cursor: pointer;
+}

@@ -1,11 +1,13 @@
 import { InfoIcon, ResumeIcon } from "../../components/Images"
 import { useState, useRef } from 'react';
 import "./index.css"
+import { useNavigate } from "react-router";
 
 export const ResumePage = ({}) => {
 
     const [file, setFile] = useState(null)
     const inputFile = useRef(null) 
+    const navigate = useNavigate()
 
     const handleDrop = (ev) => {
         ev.preventDefault();
@@ -44,6 +46,8 @@ export const ResumePage = ({}) => {
         } catch (error) {
           console.error('Error uploading file:', error);
         }
+        
+        navigate("/profile")
       };
 
     const openFilePicker = async () => {

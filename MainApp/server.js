@@ -14,6 +14,14 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'client/src')));
 app.use(express.json());
 
+const allowCrossDomain = (req, res, next) => {
+    res.header(`Access-Control-Allow-Origin`, `http://localhost:5000`);
+    res.header(`Access-Control-Allow-Methods`, `GET,PUT,POST,DELETE`);
+    res.header(`Access-Control-Allow-Headers`, `Content-Type`);
+    next();
+};
+
+app.use(allowCrossDomain)
 
 var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
@@ -46,14 +54,18 @@ app.post('/pleaseUseAsIntended', upload.single('file'), async (req, res) => {
 
 app.post("/profileSummary", async (req, res) => {
     console.log(req.body.resumeData)
-    await User.updateOne({userID: "93fb5b8b-a522-4e02-a8e9-3d3043e22f89"}, {$set: { resume: req.body.resumeData } })
+    var result = await User.updateOne({userID: "93fb5b8b-a522-4e02-a8e9-3d3043e22f89"}, {$set: { resume: req.body.resumeData } })
     res.status(200).send()
-    const response = await axios.post('http://localhost:6000/extract_info', {"resume_text": req.body.resumeData});
+    if (!result.details) {
+        const response = await axios.post('http://localhost:6000/extract_info', {"resume_text": req.body.resumeData});
+    }
 })
 
 
-app.post("extractedData", async (req, res) => {
-    console.log(req.body.data)
+app.post("/extractedData", async (req, res) => {
+    console.log(req.body)
+    await User.updateOne({userID: "93fb5b8b-a522-4e02-a8e9-3d3043e22f89"}, {$set: { details: req.body.data } })
+    return res.status(200).send(true)
 })
 
 app.post("/handleAuth", async (req, res) => {
@@ -87,6 +99,16 @@ app.post("/handleAuth", async (req, res) => {
     }
 
     res.status(200).send()
+})
+
+app.get("/getProfile", async (req, res) => {
+    console.log("get profile!")
+    const exists = await User.findOne({userID: "93fb5b8b-a522-4e02-a8e9-3d3043e22f89"})
+    if (exists.details) {
+        return res.status(200).json({details: exists.details})
+    } else {
+        return res.status(400).send(false)
+    }
 })
 
     // Serve React app

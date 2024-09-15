@@ -17,21 +17,26 @@ from './icons/resume.svg'
 export {
     default as ProfileIcon1
 }
-from './icons/magicstudio-art.webp'
+from './icons/magicstudio-art.png'
 export {
     default as ProfileIcon2
 }
-from './icons/magicstudio1-art.webp'
+from './icons/magicstudio-art_1.png'
 export {
     default as ProfileIcon3
 }
-from './icons/magicstudio-art2.webp'
+from './icons/magicstudio-art_2.png'
 export {
     default as ProfileIcon4
 }
-from './icons/magicstudio-art3.webp'
+from './icons/magicstudio-art_3.png'
 
 export {
     default as ProfileIcon5
 }
-from './icons/magicstudio-art4.webp'
+from './icons/magicstudio-art_4.png'
+
+export {
+    default as ProfileIcon6
+}
+from './icons/magicstudio-art_5.png'

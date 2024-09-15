@@ -17,6 +17,7 @@ const userSchema = new Schema({
   persona: Number,
   chats: String,
   resume: String,
+  details: String
 });
 
 const User = mongoose.model('users', userSchema);

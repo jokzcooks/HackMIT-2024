@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './people.css';
+import { ProfileIcon1, ProfileIcon2, ProfileIcon3, ProfileIcon4, ProfileIcon5, ProfileIcon6 } from '../../components/Images';
 
 const SuggestedProfiles = () => {
   const [backgroundColor, setBackgroundColor] = useState('#FFF5E1');
@@ -12,32 +13,32 @@ const SuggestedProfiles = () => {
     {
       name: 'Avery Williams',
       title: 'Full Stack Developer',
-      image: 'https://example.com/profile1.jpg',
+      image: ProfileIcon1,
     },
     {
       name: 'Avery Williams',
       title: 'Full Stack Developer',
-      image: 'https://example.com/profile2.jpg',
+      image: ProfileIcon2,
     },
     {
       name: 'Avery Williams',
       title: 'Full Stack Developer',
-      image: 'https://example.com/profile3.jpg',
+      image: ProfileIcon3,
     },
     {
       name: 'Avery Williams',
       title: 'Full Stack Developer',
-      image: 'https://example.com/profile4.jpg',
+      image: ProfileIcon4,
     },
     {
       name: 'Avery Williams',
       title: 'Full Stack Developer',
-      image: 'https://example.com/profile5.jpg',
+      image: ProfileIcon5,
     },
     {
       name: 'Avery Williams',
       title: 'Full Stack Developer',
-      image: 'https://example.com/profile6.jpg',
+      image: ProfileIcon6,
     },
   ];
 

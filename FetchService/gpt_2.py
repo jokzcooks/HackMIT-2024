@@ -51,4 +51,4 @@ async def handle_response(ctx: Context, sender: str, msg: Response):
 if __name__ == "__main__":
     
     agent.run()
-    return Response.text
+    # return Response.text
