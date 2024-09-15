@@ -6,6 +6,8 @@ import LoginPage from "../containers/Login";
 import TestLand from "../containers/TestLand";
 import LandingPage from "../containers/LandingPage";
 import ResumePage from "../containers/Resume";
+import ChatBox from "../containers/Chat/chat";
+import SuggestedProfiles from "../containers/People/people";
 
 const AppRoutes = () => {
   const location = useLocation()
@@ -31,8 +33,8 @@ const AppRoutes = () => {
         <Route path="/login" element={ <LoginPage /> }/>
         <Route path="/resume" element={ <ResumePage />}/>
         <Route path="/team" element={ <ResumePage />}/>
-        <Route path="/people" element={ <ResumePage />}/>
-        <Route path="/chat" element={ <ResumePage />}/>
+        <Route path="/people" element={ <SuggestedProfiles />}/>
+        <Route path="/chat" element={ <ChatBox />}/>
         {/* Catch-all route to redirect unauthorized access */}
         {/* <Route path="*" element={<SignedOut><LoginPage /></SignedOut>} /> */}
       

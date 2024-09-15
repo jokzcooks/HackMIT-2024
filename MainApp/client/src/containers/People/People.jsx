@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './styles.css';
+import './people.css';
 
 const SuggestedProfiles = () => {
   const [backgroundColor, setBackgroundColor] = useState('#FFF5E1');
@@ -82,4 +82,4 @@ const SuggestedProfiles = () => {
   );
 };
 
-export default SuggestedProfiles;
+export default SuggestedProfiles

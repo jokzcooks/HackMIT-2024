@@ -44,6 +44,18 @@ app.post('/pleaseUseAsIntended', upload.single('file'), async (req, res) => {
     }
 });
 
+app.post("/profileSummary", async (req, res) => {
+    console.log(req.body.resumeData)
+    await User.updateOne({userID: "93fb5b8b-a522-4e02-a8e9-3d3043e22f89"}, {$set: { resume: req.body.resumeData } })
+    res.status(200).send()
+    const response = await axios.post('http://localhost:6000/extract_info', {"resume_text": req.body.resumeData});
+})
+
+
+app.post("extractedData", async (req, res) => {
+    console.log(req.body.data)
+})
+
 app.post("/handleAuth", async (req, res) => {
     console.log("handling auth request")
     console.log(req.cookies)
@@ -81,7 +93,6 @@ app.post("/handleAuth", async (req, res) => {
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname + '/client/src/index.js'));
 });
-
 
 
 const port = process.env.PORT || 5000;
