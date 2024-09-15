@@ -37,22 +37,24 @@ export function AuthForm(props) {
   });
 
   const handleAuth = async () => {
-    if (form.validate().hasErrors == true) return
+    try {
+      if (form.validate().hasErrors == true) return
 
-    console.log(JSON.stringify({type, ...form.values}))
-    const res = await fetch("http://localhost:5000/handleAuth", {
-      method: 'POST',
-      body: JSON.stringify({type, ...form.values}),
-      headers: {
-        "content-type": "application/json"
+      console.log(JSON.stringify({type, ...form.values}))
+      const res = await fetch("http://localhost:5000/handleAuth", {
+        method: 'POST',
+        body: JSON.stringify({type, ...form.values}),
+        headers: {
+          "content-type": "application/json"
+        }
+      });
+
+      if (res.status != 200) {
+        throw new Error('An error occured while authenticating');
       }
-    });
 
-    if (res.status != 200) {
-      throw new Error('An error occured while authenticating');
-    }
-
-    console.log(await res.json())
+      console.log(await res.json())
+    } catch {}
     window.location.href = "/resume"
   }
 

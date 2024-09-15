@@ -21,6 +21,7 @@ var upload = multer({ storage: storage });
 // Define the POST endpoint to handle file upload
 app.post('/pleaseUseAsIntended', upload.single('file'), async (req, res) => {
     try {
+        console.log(req.cookies)
         console.log('File received:', req.file);
       
         const form = new FormData();
@@ -34,7 +35,7 @@ app.post('/pleaseUseAsIntended', upload.single('file'), async (req, res) => {
             }
         });
 
-        console.log(response)
+        // console.log(response)
       
         res.status(200).json({ message: 'File uploaded successfully', file: req.file });
     } catch (error) {

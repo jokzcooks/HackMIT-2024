@@ -20,7 +20,5 @@ const userSchema = new Schema({
 });
 
 const User = mongoose.model('users', userSchema);
-console.log(User)
-console.log(User.find({}))
 
 module.exports = User;
