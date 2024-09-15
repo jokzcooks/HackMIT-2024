@@ -1,11 +1,10 @@
-# Takathon - The Solution to Team Matching at Every Hackathon 
+# Match-Stick - An ai powered Team formation app! 
 
 ## Overview
 
-Takathon is a Full-stack Web App helps participants easily form teams by matching them based on their skills, interests, and preferences. We offers real-time updates, secure sign-in, and a simple interface, all built on scalable infrastructure.
+ Match-Stick is a Full-stack Web App helps participants easily form teams by matching them based on their skills, interests, and preferences and by understanding them even deeply using creating their persona. We offers real-time updates, secure sign-in, and a simple interface, all built on scalable infrastructure.
 
-## Demo
-![Landing Page](http://url/to/img.png)
+## Figma : https://www.figma.com/design/Xpvv87g7VcvpZAr5vmZCxK/HACKMIT?node-id=0-1&t=ON2r3EEuRbVqyqWM-1
 
 ## Features
 
@@ -13,16 +12,15 @@ Takathon is a Full-stack Web App helps participants easily form teams by matchin
 - **Team Matching**: Autonomous agents (Fetch.ai uAgents) match users with potential teammates based on skills, interests, and preferences.
 - **Real-Time Notifications**: Get instant alerts when matches are found or team updates occur.
 - **Dashboard**: View match suggestions, team invitations, and messages in one place. Search and filter other participants or teams.
-- **Team Management**: Accept or decline team invites and manage team profiles.
+  
 
 ## Tech Stack
 
 - **Frontend**: React.js for a responsive and reusable user interface.
 - **Backend**: Convex for serverless backend functions and real-time data sync.
 - **Database**: MongoDB for storing user and team data.
-- **Authentication**: Clerk for secure sign-in and session management.
 - **AI Agents**: Fetch.ai uAgents for autonomous user representation and team matching.
-- **Hosting**: Akamai for fast, scalable, and secure content delivery.
+
 
 ## System Design
 
